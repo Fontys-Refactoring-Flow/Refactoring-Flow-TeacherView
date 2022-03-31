@@ -1,0 +1,11 @@
+#header {
+    background-color: #0076E0;
+}
+
+.text-lightblue {
+    color: white;
+}
+
+.text-lightblue:hover,.text-lightblue:focus{
+    color:#000000
+}
