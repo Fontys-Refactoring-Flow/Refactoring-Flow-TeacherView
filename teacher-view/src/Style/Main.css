@@ -60,4 +60,5 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #000000; 
   }
+  
  html { overflow-y: scroll; }

@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Header from './Components/Header'
 import Assignments from './Pages/Assignments'
 import Classes from './Pages/Classes';
+import EditClass from './Pages/EditClass';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/assignments' element={<Assignments/>}/>
           <Route path='/classes' element={<Classes/>}/>
+          <Route path='/editclass' element={<EditClass/>}/>
         </Routes>
       </div>
     </Router>

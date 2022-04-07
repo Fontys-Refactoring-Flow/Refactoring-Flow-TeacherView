@@ -1,9 +1,10 @@
 import React from 'react'
+import './../Style/Main.css'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Not Home</h1>
+    <div className='container'>
+      <p className='title'>Not Home</p>
     </div>
   )
 }
