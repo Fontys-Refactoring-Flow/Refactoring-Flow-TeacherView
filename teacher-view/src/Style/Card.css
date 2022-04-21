@@ -1,0 +1,49 @@
+.upload-card {
+    height: 50%;
+    width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.card-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    width: 100px;
+    height: 100px;
+}
+
+.btn-holder{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.card-title{
+    font-family: monospace;
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.card-text{
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+
