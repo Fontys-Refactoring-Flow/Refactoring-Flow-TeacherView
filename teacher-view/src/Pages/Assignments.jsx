@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import './../Style/Main.css'
 import './../Style/Card.css'
 import AssignmentService from '../Services/AssignmentService';
 import { Link } from 'react-router-dom';
 
 class AssignmentsPage extends Component {
+
     constructor(props) {
         super(props);
 
@@ -23,15 +24,17 @@ class AssignmentsPage extends Component {
 
 
     render() {
+        
         return (
             <div className='container'>
-                <Link to='addassignment'className='button' style={{float :'left'}}>Add Assignment</Link>
+                <Link to="/addAssignment" className='button' style={{float: 'left'}}>Add Assignment</Link>
                 <form class="d-flex" style={{marginTop:'32px',paddingLeft:'16px'}}>
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button class="button" type="submit">Search</button>
                 </form>
                 <p className='title'style={{textAlign:'left'}}>All Assignments</p>
-                {
+                <div className='card-container'>
+                { 
                     this.state.challenge.map(
                         challenge =>
                             <tr key={challenge.id}>
@@ -45,6 +48,7 @@ class AssignmentsPage extends Component {
                             </tr>
                     )
                 }
+                </div>
             </div>
         );
     }

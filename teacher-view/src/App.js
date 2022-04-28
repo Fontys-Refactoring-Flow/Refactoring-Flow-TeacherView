@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import Assignments from './Pages/Assignments'
 import Classes from './Pages/Classes';
 import EditClass from './Pages/EditClass';
+import AddAssignment from './Pages/AddAssignment'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/assignments' element={<Assignments/>}/>
           <Route path='/classes' element={<Classes/>}/>
           <Route path='/editclass' element={<EditClass/>}/>
+          <Route path='/addAssignment' element={<AddAssignment/>}/>
         </Routes>
       </div>
     </Router>
