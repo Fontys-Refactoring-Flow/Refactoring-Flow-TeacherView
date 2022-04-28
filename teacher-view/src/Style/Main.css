@@ -34,6 +34,12 @@
      margin-top: auto;
  }
 
+ .button:disabled{
+   background-color: lightgray;
+   border-color: lightgray;
+   color: black
+ }
+
  .button:hover {
     background-color: #000000;
     border-color: #000000;

@@ -14,7 +14,7 @@ class AddAssignment extends Component {
             name: '',
             language: '',
             duration: '',
-            difficulty: '',
+            difficulty: 'choose an option...',
             description: ''
         }
         this.changeNameHandler = this.changeNameHandler.bind(this);
@@ -99,7 +99,12 @@ render(){
             </div>
             <div className='col-md-5'></div>
             <div className="col-2">
-                <Link to="/assignments" type="submit" className="button" onClick={this.saveAssignment}>Save</Link>
+                <button disabled={
+                    !this.state.name || 
+                    !this.state.description ||
+                    !this.state.language ||
+                    !this.state.difficulty ||
+                    !this.state.duration} type="submit" className="button" onClick={this.saveAssignment}>Save</button>
             </div>
             <div className='col-md-4'></div>
             <div className='col-md-1'>
