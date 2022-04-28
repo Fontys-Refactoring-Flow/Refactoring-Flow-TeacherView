@@ -12,6 +12,10 @@ class AssignmentService{
         console.log(challengeid);
         return axios.get(CHALLENGE_API_BASE_URL + '/' + challengeid);
     }
+
+    createChallange(challange){
+        return axios.post(CHALLENGE_API_BASE_URL, challange);
+    }
 }
 
 export default new AssignmentService()

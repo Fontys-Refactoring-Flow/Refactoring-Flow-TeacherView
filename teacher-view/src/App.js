@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import history from './history';
 import Home from './Pages/Home'
 import Header from './Components/Header'
 import Assignments from './Pages/Assignments'
@@ -9,7 +10,7 @@ import AddAssignment from './Pages/AddAssignment'
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
         <Header />
         <Routes>
