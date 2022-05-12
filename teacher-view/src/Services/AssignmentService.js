@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CHALLENGE_API_BASE_URL = "http://localhost:8080/api/v1/challenge";
+const CHALLENGE_API_BASE_URL = "http://localhost:8080/api/v1/assignment";
 
 class AssignmentService{
 
