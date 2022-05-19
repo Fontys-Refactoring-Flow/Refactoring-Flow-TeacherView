@@ -14,6 +14,10 @@ const Home = () => {
           <p className='title'>Go to Classes</p>
           <Link to='/classes' className='button'>Classes Page</Link>
       </div>
+      <div className='col'>
+          <p className='title'>Go to Progress</p>
+          <Link to='/progress' className='button'>Progress Page</Link>
+      </div>
       </div>
     </div>
   )

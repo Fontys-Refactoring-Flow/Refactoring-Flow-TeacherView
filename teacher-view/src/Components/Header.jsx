@@ -23,6 +23,9 @@ class Header extends Component {
                             <li>
                                 <Link to='/classes' className='nav-link px-2 text-lightblue' >Classes</Link>
                             </li>
+                            <li>
+                                <Link to='/progress' className='nav-link px-2 text-lightblue' >Student Progress</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

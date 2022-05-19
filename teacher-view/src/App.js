@@ -7,6 +7,7 @@ import Assignments from './Pages/Assignments'
 import Classes from './Pages/Classes';
 import EditClass from './Pages/EditClass';
 import AddAssignment from './Pages/AddAssignment'
+import StudentProgressPage from './Pages/StudentProgressPage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/classes' element={<Classes/>}/>
           <Route path='/editclass' element={<EditClass/>}/>
           <Route path='/addAssignment' element={<AddAssignment/>}/>
+          <Route path='/progress' element={<StudentProgressPage/>}/>
         </Routes>
       </div>
     </Router>
