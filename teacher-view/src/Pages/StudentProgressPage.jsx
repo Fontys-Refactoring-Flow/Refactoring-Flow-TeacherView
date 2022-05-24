@@ -3,6 +3,7 @@ import './../Style/Main.css'
 import './../Style/Card.css'
 import StudentService from '../Services/StudentService';
 import { Link } from 'react-router-dom'
+import SesionHandler from '../SesionHandler';
 
 class StudentProgressPage extends Component {
 
@@ -18,7 +19,13 @@ class StudentProgressPage extends Component {
         StudentService.getStudents().then((res) => {
             console.log(res)
             this.setState({ student: res.data});
+            SesionHandler.clearStudentId();
         })
+    }
+
+    grabId = (id) =>{
+        console.log(id);
+        SesionHandler.setStudentId(id);
     }
 
     render() {
@@ -41,7 +48,7 @@ class StudentProgressPage extends Component {
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
                                     <td>{student.semester}</td>
-                                    <td><Link to={`/progress/${student.id}`}className='button'>Progress</Link></td>
+                                    <td><a id={student.id} className='button' value={student.id} onClick={() =>this.grabId(student.id)} href='/progressDetail'>Progress</a></td>
                                 </tr>
                                    )
                                 }

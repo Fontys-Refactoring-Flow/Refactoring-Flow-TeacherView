@@ -22,7 +22,7 @@ function App() {
           <Route path='/editclass' element={<EditClass/>}/>
           <Route path='/addAssignment' element={<AddAssignment/>}/>
           <Route path='/progress' element={<StudentProgressPage/>}/>
-          <Route path='/progress/:id' element={<StudentProgressDetailPage/>}/>
+          <Route path='/progressDetail' element={<StudentProgressDetailPage/>}/>
         </Routes>
       </div>
     </Router>

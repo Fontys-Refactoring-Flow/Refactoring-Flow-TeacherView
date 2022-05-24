@@ -16,6 +16,10 @@ class AssignmentService{
     createChallange(challange){
         return axios.post(CHALLENGE_API_BASE_URL, challange);
     }
+
+    getChallangeByStudent(studentid){
+        return axios.get(CHALLENGE_API_BASE_URL + '/' + studentid);
+    }
 }
 
 export default new AssignmentService()

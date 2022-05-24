@@ -3,6 +3,8 @@ import './../Style/Main.css'
 import './../Style/Card.css'
 import StudentService from '../Services/StudentService';
 import { Link } from 'react-router-dom'
+import SesionHandler from '../SesionHandler';
+import AssignmentService from '../Services/AssignmentService';
 
 class StudentProgressDetailPage extends Component {
 
@@ -10,32 +12,49 @@ class StudentProgressDetailPage extends Component {
         super(props);
 
         this.state = {
-            student:[]
+            student:[],
+            assignment:[]
         }
     }
 
     componentDidMount(){
-        StudentService.getStudentById().then((res) => {
+        StudentService.getStudentById(SesionHandler.getStudentId()).then((res) => {
             console.log(res)
             this.setState({ student: res.data});
         })
-    }
+        AssignmentService.getChallangeByStudent(SesionHandler.getStudentId()).then((res) => {
+            console.log(res)
+            this.setState({ assignment: res.data});
+    })
+}
 
     render() {
 
         return(
             <div className='container'>
-            {
-                this.state.student.map(
-                    student =>
-                    <h1>{student.name}</h1>
-                )
-            }
+                <h1>{this.state.student.name}</h1>
+                <thead>
+                    <tr>
+                        <th>Assignment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {
+                    this.state.assignment.map(
+                        assignment =>
+                    <tr key={assignment.id}>
+                        <td>{assignment.name}</td>
+                    </tr>
+                    )
+                }
+                </tbody>
+                <h1>{this.state.assignment.name}</h1>
+                <Link className='button' to='/progress'>Return</Link>
             </div>
         );
     
     }
-
+    
 }
 
 export default StudentProgressDetailPage
