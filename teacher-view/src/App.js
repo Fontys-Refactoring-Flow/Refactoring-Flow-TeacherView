@@ -8,6 +8,7 @@ import Classes from './Pages/Classes';
 import EditClass from './Pages/EditClass';
 import AddAssignment from './Pages/AddAssignment'
 import StudentProgressPage from './Pages/StudentProgressPage'
+import StudentProgressDetailPage from './Pages/StudentProgressDetailPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/editclass' element={<EditClass/>}/>
           <Route path='/addAssignment' element={<AddAssignment/>}/>
           <Route path='/progress' element={<StudentProgressPage/>}/>
+          <Route path='/progress/:id' element={<StudentProgressDetailPage/>}/>
         </Routes>
       </div>
     </Router>

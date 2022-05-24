@@ -41,7 +41,7 @@ class StudentProgressPage extends Component {
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
                                     <td>{student.semester}</td>
-                                    <td><Link to='/test' className='button'>Progress</Link></td>
+                                    <td><Link to={`/progress/${student.id}`}className='button'>Progress</Link></td>
                                 </tr>
                                    )
                                 }
