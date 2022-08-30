@@ -32,10 +32,13 @@ class StudentProgressDetailPage extends Component {
 
         return(
             <div className='container'>
-                <h1>{this.state.student.name}</h1>
+                <h1 className='title'>{this.state.student.name}</h1>
+                <p className='text'>Assignments in Progress</p>
+                <table className='table table-hover'>
                 <thead>
                     <tr>
                         <th>Assignment</th>
+                        <th>Finished</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,10 +47,12 @@ class StudentProgressDetailPage extends Component {
                         assignment =>
                     <tr key={assignment.id}>
                         <td>{assignment.name}</td>
+                        <td>no</td>
                     </tr>
                     )
                 }
                 </tbody>
+                </table>
                 <h1>{this.state.assignment.name}</h1>
                 <Link className='button' to='/progress'>Return</Link>
             </div>
