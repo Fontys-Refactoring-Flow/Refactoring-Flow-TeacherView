@@ -41,7 +41,7 @@ class AssignmentsPage extends Component {
                                 <div className='card' style={{ width: '18rem', height: '200px', margin: '10px' }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{challenge.refactoringType}</h5>
-                                        <p className='card-body'>{"Level 1"}</p>
+                                        <p className='card-body'>{"level " + challenge.level}</p>
                                         <Link to='editassignment' className='button' role="button" id={challenge.id}>Edit Assignment</Link>
                                     </div>
                                 </div>
