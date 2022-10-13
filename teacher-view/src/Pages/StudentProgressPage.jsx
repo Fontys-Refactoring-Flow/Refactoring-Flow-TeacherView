@@ -33,29 +33,29 @@ class StudentProgressPage extends Component {
         return(
             <div className='container'>
                 <p className='title'>All Students</p>
-                        <table className='table table-hover'>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Semester</th>
-                                    <th>Progress</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                this.state.student.map(
-                                    student =>
+                <table className='table table-hover'>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Progress</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        this.state.student.map(
+                            student =>
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
                                     <td>{student.semester}</td>
                                     <td><a id={student.id} className='button' value={student.id} onClick={() =>this.grabId(student.id)} href='/progressDetail'>Progress</a></td>
                                 </tr>
-                                   )
-                                }
-                            </tbody>
-                        </table>
-                        
-                 
+                        )
+                    }
+                    </tbody>
+                </table>
+
+
             </div>
         );
     }
