@@ -30,10 +30,6 @@ class StudentProgressDetailPage extends Component {
             this.setState({ assignment: res.data});
         })
 
-        AssignmentService.getLearningoutcomesByStudent(SesionHandler.getStudentId()).then((res) =>{
-            console.log(res)
-            this.setState({learningOutcome: res.data})
-        })
     }
 
     render() {
@@ -62,35 +58,6 @@ class StudentProgressDetailPage extends Component {
                     </tbody>
                 </table>
 
-                <table className='table table-hover'>
-                    <thead>
-                    <tr>
-                        <th>learning outcome</th>
-                        <th>Level</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <tr>
-                        <td>
-                            Code quality
-                        </td>
-                        <td>
-                            {this.state.learningOutcome.codeQuality}
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            Refactoring
-                        </td>
-                        <td>
-                            {this.state.learningOutcome.refactoring}
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
 
                 <h1>{this.state.assignment.name}</h1>
                 <Link className='button' to='/progress'>Return</Link>

@@ -21,9 +21,6 @@ class AssignmentService{
         return axios.get(ASSIGNMENT_API_BASE_URL + '/findByStudentId/' + studentid);
     }
 
-    getLearningoutcomesByStudent(studentid){
-        return axios.get('http://localhost:8080/api/v1/learning_outcomes/studentId/' + studentid)
-    }
 }
 
 export default new AssignmentService()
