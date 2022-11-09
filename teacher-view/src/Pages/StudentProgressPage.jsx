@@ -11,9 +11,18 @@ class StudentProgressPage extends Component {
         super(props);
 
         this.state = {
-            student: []
+            student: [],
+            searchInput: []
         }
     }
+
+
+
+    handleChange = (e) => {
+        e.preventDefault();
+
+        this.state.searchInput(e.target.value);
+    };
 
     componentDidMount(){
         StudentService.getStudents().then((res) => {
@@ -32,7 +41,15 @@ class StudentProgressPage extends Component {
 
         return(
             <div className='container'>
+
                 <p className='title'>All Students</p>
+
+                <input
+                    type="text"
+                    placeholder="Search here"
+                    onChange={this.handleChange}
+                    value={this.state.searchInput} />
+
                 <table className='table table-hover'>
                     <thead>
                     <tr>

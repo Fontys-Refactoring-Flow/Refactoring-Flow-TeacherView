@@ -4,8 +4,8 @@ const ASSIGNMENT_API_BASE_URL = "http://localhost:8080/api/v1/assignment";
 
 class AssignmentService{
 
-    getChallenges(){
-        return axios.get(ASSIGNMENT_API_BASE_URL);
+    getAssignments(){
+        return axios.get(ASSIGNMENT_API_BASE_URL + '/');
     }
 
     getAssignmentById(assignmentId){

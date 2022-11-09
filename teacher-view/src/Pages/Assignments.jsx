@@ -16,7 +16,7 @@ class AssignmentsPage extends Component {
     }
 
     componentDidMount() {
-        AssignmentService.getChallenges().then((res) => {
+        AssignmentService.getAssignments().then((res) => {
             console.log(res)
             this.setState({ challenge: res.data });
         })
