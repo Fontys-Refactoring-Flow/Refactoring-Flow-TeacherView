@@ -9,6 +9,7 @@ import EditClass from './Pages/EditClass';
 import AddAssignment from './Pages/AddAssignment'
 import StudentProgressPage from './Pages/StudentProgressPage'
 import StudentProgressDetailPage from './Pages/StudentProgressDetailPage';
+import CodeviewPage from './Pages/CodeviewPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/addAssignment' element={<AddAssignment/>}/>
           <Route path='/progress' element={<StudentProgressPage/>}/>
           <Route path='/progressDetail' element={<StudentProgressDetailPage/>}/>
+          <Route path='progressDetail/codeview/:assignmentId' element={<CodeviewPage/>}/>
         </Routes>
       </div>
     </Router>
