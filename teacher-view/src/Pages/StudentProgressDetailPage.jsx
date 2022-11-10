@@ -43,6 +43,7 @@ class StudentProgressDetailPage extends Component {
                     <tr>
                         <th>Assignment</th>
                         <th>Level</th>
+                        <th>Versions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,6 +53,8 @@ class StudentProgressDetailPage extends Component {
                                 <tr key={assignment.id}>
                                     <td>{assignment.refactoringType}</td>
                                     <td>{assignment.level}</td>
+                                    <td><Link className='button' to={'codeview/' + assignment.id } id={assignment.id.toString()}>View</Link></td>
+                                    {console.log(assignment.id)}
                                 </tr>
                         )
                     }
