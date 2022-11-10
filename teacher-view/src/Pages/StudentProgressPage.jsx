@@ -11,23 +11,29 @@ class StudentProgressPage extends Component {
         super(props);
 
         this.state = {
-            student: [],
-            searchInput: []
+            students: [],
+            searchInput: [],
+            filteredStudents: []
         }
     }
 
-
-
     handleChange = (e) => {
         e.preventDefault();
+        this.setState({searchInput: e.target.value })
+        if (this.state.searchInput.length > 0) {
+            this.setState({filteredStudents:this.state.students.filter(student => student.name.toLowerCase().includes(this.state.searchInput))});
+        }
+        else{
+            this.setState({filteredStudents: this.state.students})
+        }
 
-        this.state.searchInput(e.target.value);
     };
 
     componentDidMount(){
         StudentService.getStudents().then((res) => {
             console.log(res)
-            this.setState({ student: res.data});
+            this.setState({ students: res.data});
+            this.setState({ filteredStudents: res.data});
             SesionHandler.clearStudentId();
         })
     }
@@ -47,8 +53,10 @@ class StudentProgressPage extends Component {
                 <input
                     type="text"
                     placeholder="Search here"
+
                     onChange={this.handleChange}
-                    value={this.state.searchInput} />
+                    value={this.state.searchInput}
+                     />
 
                 <table className='table table-hover'>
                     <thead>
@@ -60,7 +68,7 @@ class StudentProgressPage extends Component {
                     </thead>
                     <tbody>
                     {
-                        this.state.student.map(
+                        this.state.filteredStudents.map(
                             student =>
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
