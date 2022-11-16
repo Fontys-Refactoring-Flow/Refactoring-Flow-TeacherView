@@ -24,7 +24,7 @@ function App() {
           <Route path='/addAssignment' element={<AddAssignment/>}/>
           <Route path='/progress' element={<StudentProgressPage/>}/>
           <Route path='/progressDetail' element={<StudentProgressDetailPage/>}/>
-          <Route path='progressDetail/codeview/:assignmentId' element={<CodeviewPage/>}/>
+          <Route path='progressDetail/codeview/:assignmentId/:userName' element={<CodeviewPage/>}/>
         </Routes>
       </div>
     </Router>
