@@ -12,14 +12,12 @@ class StudentProgressPage extends Component {
 
         this.state = {
             students: [],
-            /*searchInput: [],*/
             filteredStudents: []
         }
     }
 
     handleChange = (e) => {
         e.preventDefault();
-        /*this.setState({searchInput: e.target.value })*/
         if (e.target.value.length > 0) {
             this.setState({filteredStudents:this.state.students.filter(student => student.name.toLowerCase().includes(e.target.value))});
         }
@@ -55,7 +53,6 @@ class StudentProgressPage extends Component {
                     placeholder="Search here"
 
                     onChange={this.handleChange}
-                    /*value={this.state.searchInput}*/
                      />
 
                 <table className='table table-hover'>
