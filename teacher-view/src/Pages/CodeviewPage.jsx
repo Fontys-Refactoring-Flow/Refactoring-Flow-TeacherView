@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom'
 import CodeField from '../Components/CodeField';
 import {Link} from 'react-router-dom'
 
@@ -8,10 +7,6 @@ const CodeviewPage = () => {
     const [code, setCode] = React.useState('');
     let fileLinks = {};
     let codeFile;
-
-
-
-    const {assignmentId} = useParams();
 
     function bin2String(array) {
         var result = "";
@@ -25,7 +20,7 @@ const CodeviewPage = () => {
         <div className='container'>
             <p className='title'>Assigment</p>
             <div>
-                <CodeField code={code} assignmentId={parseInt(assignmentId || "")}/>
+                <CodeField code={code} />
             </div>
             <Link className='button' to ='/progress'>Return</Link>
         </div>

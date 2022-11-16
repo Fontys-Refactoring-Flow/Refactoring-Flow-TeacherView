@@ -3,11 +3,12 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../Style/Codeview.css'
 import '../Style/Main.css'
 import codeService from '../Services/codeService';
+import { useParams } from 'react-router-dom'
 
 const CodeField = (props) => {
 
+    const {assignmentId, userName} = useParams();
     const [code, setCode] = useState("");
-    const [assignmentId, setAssignmentId] = useState(0);
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
     const [version, setVersion] = useState(1);
     const [versionMax, setVersionMax] = useState(1);
@@ -50,8 +51,8 @@ const CodeField = (props) => {
     }
 
     useEffect(() => {
-        if(props.assignmentId) setAssignmentId(props.assignmentId)
-        codeService.getCodeByNameAndAssignmentID(assignmentId, "Antwan").then((file) => {
+        console.log(props)
+        codeService.getCodeByNameAndAssignmentID(assignmentId, userName).then((file) => {
             setFile(file.data);
             console.log(file.data);
 
@@ -87,7 +88,7 @@ const CodeField = (props) => {
         }
 
         setCode(loadedCode)
-    }, [props, assignmentId])
+    }, [props, assignmentId, userName])
 
   return (
             <div className='editor-container'>
