@@ -3,6 +3,7 @@ import './../Style/Main.css'
 import { Link } from 'react-router-dom'
 import AssignmentService from '../Services/AssignmentService'
 import history from '../history';
+import CodeService from "../Services/codeService";
 
 class AddAssignment extends Component {
 
@@ -11,11 +12,13 @@ class AddAssignment extends Component {
         super(props)
 
         this.state = {
+            id:'',
             refactoringType: '',
             level: '',
             description: '',
             risks: '',
-            language:''
+            language:'',
+            codeFile:''
 
         }
         this.changeNameHandler = this.changeNameHandler.bind(this);
@@ -23,13 +26,16 @@ class AddAssignment extends Component {
         this.changeLevelHandler = this.changeLevelHandler.bind(this);
         this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
         this.changeLanguageHandler = this.changeLanguageHandler.bind(this);
+        this.changeCodeFileHandler = this.changeCodeFileHandler.bind(this);
         this.saveAssignment = this.saveAssignment.bind(this);
 
     }
 
+
+
     saveAssignment = (e) => {
         e.preventDefault();
-
+        console.log('triggered action')
         let assignment = {
             refactoringType: this.state.refactoringType,
             level: this.state.level,
@@ -41,8 +47,25 @@ class AddAssignment extends Component {
 
         AssignmentService.createAssignment(assignment).then(res =>{
             history.push('/assignments')
+            this.state.id = res.data.state.id
+            this.SaveCodeFile()
             window.location.reload(false)
         });
+    }
+
+    SaveCodeFile = () => {
+        let codeFile ={
+            userId: 11,
+            code: this.state.codeFile,
+            assignmentId: this.state.id,
+            version: -1
+        }
+        console.log('codeFile =>' + JSON.stringify(codeFile));
+
+        CodeService.addCodefile(codeFile).then(res =>{
+            console.log('added new codefile for assignment with id:' + res.data.state.id)
+
+        })
     }
 
     changeNameHandler=(event) =>{
@@ -54,7 +77,7 @@ class AddAssignment extends Component {
     }
 
     changeLanguageHandler=(event)=>{
-        this.setState({language: event.target.language});
+        this.setState({language: event.target.value});
     }
 
     changeDescriptionHandler=(event) =>{
@@ -63,6 +86,10 @@ class AddAssignment extends Component {
 
     changeRisksHandler=(event) =>{
         this.setState({risks: event.target.value});
+    }
+
+    changeCodeFileHandler=(event) =>{
+        this.setState({codeFile: event.target.value});
     }
 
 
@@ -75,7 +102,7 @@ class AddAssignment extends Component {
                     <div className="row g-3">
                         <div className="col-md-4">
                             <label className="form-label">Refactoring type</label>
-                            <input type="text" className="form-control" value={this.state.name} onChange={this.changeNameHandler} required/>
+                            <input type="text" className="form-control" value={this.state.refactoringType} onChange={this.changeNameHandler} required/>
                         </div>
                         <div className="col-md-4">
                             <label className="form-label">Language</label>
@@ -102,7 +129,7 @@ class AddAssignment extends Component {
                     <div className="row g-3">
                         <div className="col-md-12">
                             <label className="form-label">Code</label>
-                            <textarea rows='8' className="form-control"  required/>
+                            <textarea rows='8' className="form-control" value={this.state.codeFile} onChange={this.changeCodeFileHandler} required/>
                         </div>
 
                     </div>
@@ -111,11 +138,12 @@ class AddAssignment extends Component {
                         <div className='col-md-5'></div>
                         <div className="col-2">
                             <button disabled={
-                                !this.state.name ||
+                                !this.state.refactoringType ||
+                                !this.state.language ||
+                                !this.state.level ||
                                 !this.state.description ||
                                 !this.state.risks ||
-                                !this.state.level ||
-                                !this.state.language} type="submit" className="button" onClick={this.saveAssignment}>Save</button>
+                                !this.state.codeFile } type="submit" className="button" onClick={this.saveAssignment}>Save</button>
                         </div>
                         <div className='col-md-4'></div>
                         <div className='col-md-1'>
@@ -123,11 +151,6 @@ class AddAssignment extends Component {
                         </div>
 
                     </div>
-
-                    {/*<div className="col-md-2">
-                        <label className="form-label">Duration in minutes</label>
-                        <input type="number" className="form-control" value={} onChange={}/>
-                    </div>*/}
                 </form>
             </div>
         )
