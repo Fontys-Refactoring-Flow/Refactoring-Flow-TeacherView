@@ -40,15 +40,17 @@ class AssignmentsPage extends Component {
         
         return (
             <div className='container'>
-                <Link to="/addAssignment" className='button' style={{float: 'left'}}>Add Assignment</Link>
+                <p className='title'style={{textAlign:'left'}}>All Assignments <Link to="/addAssignment" class='button' >Add Assignment</Link>  </p>
+
+
                 <input
                     type="text"
                     placeholder="Search here"
-                    class="d-flex"
+                    class="searchbar col-md-2"
                     style={{marginTop:'32px',paddingLeft:'16px'}}
                     onChange={this.handleChange}
                 />
-                <p className='title'style={{textAlign:'left'}}>All Assignments</p>
+
                 <div className='card-container'>
                 { 
                     this.state.filteredAssignments.map(
@@ -58,7 +60,7 @@ class AssignmentsPage extends Component {
                                     <div className="card-body">
                                         <h5 className="card-title">{challenge.refactoringType}</h5>
                                         <p className='card-body'>{"level " + challenge.level}</p>
-                                        <Link to='editassignment' className='button' role="button" id={challenge.id}>Edit Assignment</Link>
+                                        {/*<Link to='editassignment' className='button' role="button" id={challenge.id}>Edit Assignment</Link>*/}
                                     </div>
                                 </div>
                             </tr>
