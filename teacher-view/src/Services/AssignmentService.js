@@ -14,7 +14,7 @@ class AssignmentService{
     }
 
     createAssignment(assignment){
-        return axios.post(ASSIGNMENT_API_BASE_URL, assignment);
+        return axios.post(ASSIGNMENT_API_BASE_URL + '/add', assignment);
     }
 
     getAssignmentByStudent(studentid){

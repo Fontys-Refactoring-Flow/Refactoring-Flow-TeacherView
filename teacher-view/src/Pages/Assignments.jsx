@@ -11,14 +11,27 @@ class AssignmentsPage extends Component {
 
 
         this.state = {
-            challenge: []
+            assignments: [],
+            filteredAssignments: []
         }
     }
+
+    handleChange = (e) => {
+        e.preventDefault();
+        if (e.target.value.length > 0) {
+            this.setState({filteredAssignments:this.state.assignments.filter(assignment => assignment.refactoringType.toLowerCase().includes(e.target.value))});
+        }
+        else{
+            this.setState({filteredAssignments: this.state.assignments})
+        }
+
+    };
 
     componentDidMount() {
         AssignmentService.getAssignments().then((res) => {
             console.log(res)
-            this.setState({ challenge: res.data });
+            this.setState({ assignments: res.data });
+            this.setState({ filteredAssignments: res.data });
         })
     }
 
@@ -28,14 +41,17 @@ class AssignmentsPage extends Component {
         return (
             <div className='container'>
                 <Link to="/addAssignment" className='button' style={{float: 'left'}}>Add Assignment</Link>
-                <form class="d-flex" style={{marginTop:'32px',paddingLeft:'16px'}}>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="button" type="submit">Search</button>
-                </form>
+                <input
+                    type="text"
+                    placeholder="Search here"
+                    class="d-flex"
+                    style={{marginTop:'32px',paddingLeft:'16px'}}
+                    onChange={this.handleChange}
+                />
                 <p className='title'style={{textAlign:'left'}}>All Assignments</p>
                 <div className='card-container'>
                 { 
-                    this.state.challenge.map(
+                    this.state.filteredAssignments.map(
                         challenge =>
                             <tr key={challenge.id}>
                                 <div className='card' style={{ width: '18rem', height: '200px', margin: '10px' }}>

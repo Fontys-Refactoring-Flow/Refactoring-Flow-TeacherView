@@ -10,7 +10,6 @@ const getCodeByNameAndAssignmentID = (id, name) => {
 }
 
 const addCodefile = (codeFile) => {
-    console.log(codeFile);
     return axios.post('http://localhost:8080/api/v1/codefile/', codeFile);
 }
 

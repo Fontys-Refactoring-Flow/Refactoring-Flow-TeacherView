@@ -32,10 +32,9 @@ class AddAssignment extends Component {
     }
 
 
-
     saveAssignment = (e) => {
         e.preventDefault();
-        console.log('triggered action')
+
         let assignment = {
             refactoringType: this.state.refactoringType,
             level: this.state.level,
@@ -43,14 +42,15 @@ class AddAssignment extends Component {
             risks: this.state.risks,
             description: this.state.description
         };
-        console.log('assignment =>' + JSON.stringify(assignment));
 
         AssignmentService.createAssignment(assignment).then(res =>{
             history.push('/assignments')
-            this.state.id = res.data.state.id
-            this.SaveCodeFile()
+            this.state.id = res.data.id
+
             window.location.reload(false)
+            this.SaveCodeFile()
         });
+
     }
 
     SaveCodeFile = () => {
@@ -60,10 +60,8 @@ class AddAssignment extends Component {
             assignmentId: this.state.id,
             version: -1
         }
-        console.log('codeFile =>' + JSON.stringify(codeFile));
 
         CodeService.addCodefile(codeFile).then(res =>{
-            console.log('added new codefile for assignment with id:' + res.data.state.id)
 
         })
     }
