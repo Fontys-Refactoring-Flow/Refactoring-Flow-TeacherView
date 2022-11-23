@@ -45,16 +45,19 @@ class StudentProgressPage extends Component {
 
         return(
             <div className='container'>
-
-                <p className='title'>All Students</p>
-
-                <input
-                    type="text"
-                    placeholder="Search here"
-
-                    onChange={this.handleChange}
-                     />
-
+                <div className='row'>
+                    <div className='col-3'>
+                        <p className='title'>All Students</p>
+                    </div>
+                    <div className='col-4'>
+                        <input
+                            className="searchbar"
+                            type="text"
+                            placeholder="Search student"
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
                 <table className='table table-hover'>
                     <thead>
                     <tr>
