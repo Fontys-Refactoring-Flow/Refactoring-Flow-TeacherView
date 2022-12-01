@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './../Style/Main.css'
+import '../Style/Main.css'
 import { Link } from 'react-router-dom'
 import AssignmentService from '../Services/AssignmentService'
 import history from '../history';

@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import './../Style/Main.css'
+import '../Style/Main.css'
 import { Link } from 'react-router-dom'
 
 const Classes = () => { 

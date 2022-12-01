@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import './../Style/Main.css'
-import './../Style/Card.css'
+import '../Style/Main.css'
+import '../Style/Card.css'
 import StudentService from '../Services/StudentService';
 import { Link } from 'react-router-dom'
 import SesionHandler from '../SesionHandler';

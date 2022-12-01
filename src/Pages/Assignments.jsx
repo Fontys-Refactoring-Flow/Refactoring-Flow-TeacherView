@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react'
-import './../Style/Main.css'
-import './../Style/Card.css'
+import '../Style/Main.css'
+import '../Style/Card.css'
 import AssignmentService from '../Services/AssignmentService';
 import { Link } from 'react-router-dom';
 
