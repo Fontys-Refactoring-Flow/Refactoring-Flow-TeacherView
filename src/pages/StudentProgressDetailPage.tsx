@@ -28,22 +28,22 @@ const StudentProgressDetailPage = () => {
             <h1 className='title'>{student?.name}</h1>
             <p className='text'>Assignments in Progress</p>
             <table className='table table-hover'>
-            <thead>
-                <tr>
-                    <th>Assignment</th>
-                    <th>Finished</th>
-                </tr>
-            </thead>
-            <tbody>
-            {
-                assignments?.map((assignment) =>
-                    <tr key={assignment.id}>
-                        <td>{assignment.name}</td>
-                        <td>no</td>
+                <thead>
+                    <tr>
+                        <th>Assignment</th>
+                        <th>Finished</th>
                     </tr>
-                )
-            }
-            </tbody>
+                </thead>
+                <tbody>
+                {
+                    assignments?.map((assignment) =>
+                        <tr key={assignment.id}>
+                            <td>{assignment.refactoringType}</td>
+                            <td>no</td>
+                        </tr>
+                    )
+                }
+                </tbody>
             </table>
             <Link className='button' to='/progress'>Return</Link>
         </div>
