@@ -6,14 +6,14 @@ import SessionHandler from '../SesionHandler';
 import {StudentType} from "../types/UserTypes";
 
 const StudentProgressPage = () => {
-    const [students, setStudents] = useState<Array<StudentType>>()
+    const [students, setStudents] = useState<Array<StudentType> | null>(null)
 
     useEffect(() => {
         studentService.getStudents().then((res) => {
             setStudents(res.data);
             SessionHandler.clearStudentId();
         })
-    })
+    }, [])
 
     const grabId = (id: number) =>{
         console.log(id);
@@ -33,7 +33,7 @@ const StudentProgressPage = () => {
                         </thead>
                         <tbody>
                         {
-                            students!.map((student) =>
+                            students?.map((student) =>
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
                                     <td>{student.semester}</td>
