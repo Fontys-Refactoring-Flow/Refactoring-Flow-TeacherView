@@ -12,7 +12,7 @@ const AssignmentsPage = () => {
         assignmentService.getAssignments().then((res) => {
             setAssignments(res.data)
         })
-    })
+    }, [])
 
     return (
         <div className='container'>
