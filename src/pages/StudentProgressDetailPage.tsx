@@ -9,8 +9,8 @@ import {StudentType} from "../types/UserTypes";
 import {AssignmentType} from "../types/AssignmentType";
 
 const StudentProgressDetailPage = () => {
-    const [student, setStudent] = useState<StudentType>()
-    const [assignments, setAssignments] = useState<Array<AssignmentType>>()
+    const [student, setStudent] = useState<StudentType | null>(null)
+    const [assignments, setAssignments] = useState<Array<AssignmentType> | null>(null)
 
     useEffect(() => {
         studentService.getStudentById(parseInt(sessionHandler.getStudentId()!)).then((res) => {
@@ -21,11 +21,11 @@ const StudentProgressDetailPage = () => {
             .then((res) => {
                 setAssignments(res.data)
             })
-    })
+    }, [])
 
     return(
         <div className='container'>
-            <h1 className='title'>{student!.name}</h1>
+            <h1 className='title'>{student?.name}</h1>
             <p className='text'>Assignments in Progress</p>
             <table className='table table-hover'>
             <thead>
@@ -36,7 +36,7 @@ const StudentProgressDetailPage = () => {
             </thead>
             <tbody>
             {
-                assignments!.map((assignment) =>
+                assignments?.map((assignment) =>
                     <tr key={assignment.id}>
                         <td>{assignment.name}</td>
                         <td>no</td>
