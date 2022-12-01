@@ -22,21 +22,25 @@ const AssignmentsPage = () => {
                 <button className="button" type="submit">Search</button>
             </form>
             <p className='title' style={{textAlign:'left'}}>All Assignments</p>
-            <div className='card-container'>
-            {
-                assignments?.map((challenge) =>
-                    <tr key={challenge.id}>
-                        <div className='card' style={{ width: '18rem', height: '200px', margin: '10px' }}>
-                            <div className="card-body">
-                                <h5 className="card-title">{challenge.refactoringType}</h5>
-                                <p className='card-body'>{"Level 1"}</p>
-                                <Link to='editassignment' className='button' role="button">Edit Assignment</Link>
-                            </div>
-                        </div>
-                    </tr>
-                )
-            }
-            </div>
+            <table className='card-container'>
+                <tbody>
+                {
+                    assignments?.map((challenge) =>
+                        <tr key={challenge.id}>
+                            <td>
+                                <div className='card' style={{ width: '18rem', height: '200px', margin: '10px' }}>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{challenge.refactoringType}</h5>
+                                        <p className='card-body'>{"Level 1"}</p>
+                                        <Link to='editassignment' className='button' role="button">Edit Assignment</Link>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    )
+                }
+                </tbody>
+            </table>
         </div>
     )
 }
