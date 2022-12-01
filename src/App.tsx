@@ -1,18 +1,17 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import history from './history';
-import Home from './Pages/Home'
-import Header from './Components/Header'
-import Assignments from './Pages/Assignments'
-import Classes from './Pages/Classes';
-import EditClass from './Pages/EditClass';
-import AddAssignment from './Pages/AddAssignment'
-import StudentProgressPage from './Pages/StudentProgressPage'
-import StudentProgressDetailPage from './Pages/StudentProgressDetailPage';
+import Home from './pages/Home'
+import Header from './components/Header'
+import Assignments from './pages/Assignments'
+import Classes from './pages/Classes';
+import EditClass from './pages/EditClass';
+import AddAssignment from './pages/AddAssignment'
+import StudentProgressPage from './pages/StudentProgressPage'
+import StudentProgressDetailPage from './pages/StudentProgressDetailPage';
 
 function App() {
   return (
-    <Router history={history}>
+    <Router>
       <div className="App">
         <Header />
         <Routes>

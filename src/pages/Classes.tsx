@@ -1,20 +1,19 @@
-import { React, useState } from 'react'
-import '../Style/Main.css'
+import '../style/Main.css'
 import { Link } from 'react-router-dom'
 
 const Classes = () => { 
 
   return (
     <div>
-        <div class="container">
+        <div className="container">
             <p className='title'>Classes</p>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="button" type="submit">Search</button>
+            <form className="d-flex">
+                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button className="button" type="submit">Search</button>
             </form>
         </div>
         <div className='container' style={{textAlign:'left'}}>
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Class</th>

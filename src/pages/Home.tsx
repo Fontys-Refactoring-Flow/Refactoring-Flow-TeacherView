@@ -1,11 +1,11 @@
 import React from 'react'
-import '../Style/Main.css'
+import '../style/Main.css'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
     <div className='container'>
-      <div class="row align-items-start">
+      <div className="row align-items-start">
       <div className='col'>
           <p className='title'>Go to Assignments</p>
           <Link to='/assignments' className='button'>Assignments Page</Link>

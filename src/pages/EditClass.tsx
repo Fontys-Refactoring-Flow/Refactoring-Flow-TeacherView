@@ -1,4 +1,4 @@
-import '../Style/Main.css'
+import '../style/Main.css'
 import { Link } from 'react-router-dom'
 
 const EditClass = () => {
@@ -6,7 +6,7 @@ const EditClass = () => {
     <div className='container'>
       <p className="title">Edit Class</p>
       <div className='container' style={{textAlign:'left',paddingLeft:'0px',paddingRight:'0px'}}>
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
