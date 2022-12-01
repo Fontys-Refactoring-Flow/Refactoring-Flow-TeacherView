@@ -26,7 +26,7 @@ const AddAssignment = () => {
             description: description
         };
 
-        assignmentService.createAssignment(assignment).then(() => {
+        assignmentService.addAssignment(assignment).then(() => {
             navigate('/assignments')
         });
     }
