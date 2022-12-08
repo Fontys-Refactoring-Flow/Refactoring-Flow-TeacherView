@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/teacher-view.iml" filepath="$PROJECT_DIR$/.idea/teacher-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Refactoring Flow TeacherView.iml" filepath="$PROJECT_DIR$/.idea/Refactoring Flow TeacherView.iml" />
     </modules>
   </component>
 </project>
