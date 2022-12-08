@@ -8,6 +8,8 @@ import EditClass from './pages/EditClass';
 import AddAssignment from './pages/AddAssignment'
 import StudentProgressPage from './pages/StudentProgressPage'
 import StudentProgressDetailPage from './pages/StudentProgressDetailPage';
+import GitHubCallback from "./components/upload/github/GitHubCallback";
+import UploadMethodList from "./components/upload/UploadMethodList";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/addAssignment' element={<AddAssignment/>}/>
           <Route path='/progress' element={<StudentProgressPage/>}/>
           <Route path='/progressDetail' element={<StudentProgressDetailPage/>}/>
+          <Route path='/github/callback' element={<GitHubCallback/>}/>
+          <Route path='/upload' element={<UploadMethodList/>}/>
         </Routes>
       </div>
     </Router>

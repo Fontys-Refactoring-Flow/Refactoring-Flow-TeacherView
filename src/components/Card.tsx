@@ -1,6 +1,6 @@
 import React, {MouseEventHandler} from 'react';
-import '../../style/Main.css'
-import '../../style/Card.css'
+import '../style/Main.css'
+import '../style/Card.css'
 
 type CardType = {
     title: string,
