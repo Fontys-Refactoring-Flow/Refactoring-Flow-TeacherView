@@ -67,7 +67,10 @@ const AddAssignment = () => {
                 <textarea rows={4} className="form-control" value={description}
                           onChange={(e) => { setDescription(e.target.value) }} required/>
             </div>
-            <div className='col-md-5'></div>
+            <div className='col-md-1'>
+                <Link to={'/upload'} className={'button'}>Upload</Link>
+            </div>
+            <div className='col-md-4'></div>
             <div className="col-2">
                 <button disabled={
                     !name ||
