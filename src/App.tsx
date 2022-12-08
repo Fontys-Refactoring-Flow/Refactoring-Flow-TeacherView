@@ -12,6 +12,7 @@ import GitHubCallback from "./components/upload/github/GitHubCallback";
 import UploadMethodList from "./components/upload/UploadMethodList";
 import LoginPage from "./pages/LoginPage";
 import {AuthProvider} from "./components/context/AuthContext";
+import GitHubSelect from "./components/upload/github/GitHubSelect";
 
 function App() {
   return (
