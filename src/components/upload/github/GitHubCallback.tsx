@@ -8,7 +8,7 @@ const GitHubCallback = () => {
 
     useEffect(() => {
         axiosInstance.post(`/github/callback?code=${params.get("code")}`).then(() => {
-            navigate("/")
+            navigate("/github/select")
         })
     }, [])
 
