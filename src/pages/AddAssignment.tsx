@@ -70,7 +70,7 @@ const AddAssignment = () => {
             <div className='col-md-1'>
                 <Link to={'/upload'} className={'button'}>Upload</Link>
             </div>
-            <div className='col-md-4'></div>
+0            <div className='col-md-4'></div>
             <div className="col-2">
                 <button disabled={
                     !name ||
