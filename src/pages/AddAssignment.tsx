@@ -56,7 +56,7 @@ const AddAssignment = () => {
             <div className="col-md-2">
                 <label className="form-label">Difficulty</label>
                 <select className="form-select" value={difficulty} onChange={(e) => { setDifficulty(e.target.value) }} required>
-                <option selected>choose an option...</option>
+                <option defaultChecked={true}>choose an option...</option>
                 <option>Easy</option>
                 <option>Medium</option>
                 <option>Hard</option>
