@@ -3,7 +3,7 @@ export type UserBasicType = {
     name: string,
     password?: string,
     email: string,
-    authorities?: Array<string>
+    authorities: Array<string>
 }
 
 export type UserAuthType = UserBasicType & {
