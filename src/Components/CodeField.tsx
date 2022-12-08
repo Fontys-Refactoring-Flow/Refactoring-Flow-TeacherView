@@ -63,7 +63,7 @@ const CodeField = (props: CodeFieldProps) => {
 
     useEffect(() => {
         console.log(props)
-        codeService.getCodeByNameAndAssignmentID(assignmentId!, auth!.teacher!.name).then((file) => {
+        codeService.getCodeByNameAndAssignmentID(assignmentId!, userName!).then((file) => {
             setFileLinks(file.data)
 
             let latestVersion : CodeFileType = file.data[0]
