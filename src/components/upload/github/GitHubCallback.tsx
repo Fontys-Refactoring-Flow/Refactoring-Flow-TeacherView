@@ -10,7 +10,7 @@ const GitHubCallback = () => {
         axiosInstance.post(`/github/callback?code=${params.get("code")}`).then(() => {
             navigate("/")
         })
-    })
+    }, [])
 
     return (
         <div>
