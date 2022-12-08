@@ -1,0 +1,23 @@
+.font-btn {
+    background-color: rgb(73, 70, 77);
+    color: rgb(196, 181, 196);
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.font-btn:hover{
+    background-color: rgb(101, 94, 109);
+}
+
+.editor-container {
+    background-color: rgb(58, 57, 59);
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.code-field {
+    width: 70%;
+}
