@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {axiosInstance} from "../../../services/axios.service";
 
-const Callback = () => {
+const GitHubCallback = () => {
     const [params] = useSearchParams()
     const navigate = useNavigate()
 
@@ -19,4 +19,4 @@ const Callback = () => {
     )
 }
 
-export default Callback
+export default GitHubCallback

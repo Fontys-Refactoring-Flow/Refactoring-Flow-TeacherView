@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../style/Home.css';
+import '../../style/Home.css';
 import Card from "../Card";
 import FolderImage from '../../images/Folder.png'
 import GitHubImage from '../../images/GithubLogo.png';
