@@ -12,6 +12,7 @@ import GitHubCallback from "./components/upload/github/GitHubCallback";
 import UploadMethodList from "./components/upload/UploadMethodList";
 import LoginPage from "./pages/LoginPage";
 import {AuthProvider} from "./components/context/AuthContext";
+import GitHubSelect from "./components/upload/github/GitHubSelect";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path='/progress' element={<StudentProgressPage/>}/>
             <Route path='/progressDetail' element={<StudentProgressDetailPage/>}/>
             <Route path='/github/callback' element={<GitHubCallback/>}/>
+            <Route path='/github/select' element={<GitHubSelect/>}/>
             <Route path='/upload' element={<UploadMethodList/>}/>
             <Route path='/login' element={<LoginPage/>}/>
           </Routes>
