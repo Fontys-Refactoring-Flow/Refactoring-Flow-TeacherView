@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import CodeField from '../Components/CodeField';
+import React from 'react';
+import CodeField from '../components/CodeField';
 import {Link} from 'react-router-dom'
 
 const CodeviewPage = () => {
@@ -8,7 +8,7 @@ const CodeviewPage = () => {
     let fileLinks = {};
     let codeFile;
 
-    function bin2String(array) {
+    function bin2String(array: string[]) {
         var result = "";
         for (var i = 0; i < array.length; i++) {
             result += String.fromCharCode(parseInt(array[i], 2));
