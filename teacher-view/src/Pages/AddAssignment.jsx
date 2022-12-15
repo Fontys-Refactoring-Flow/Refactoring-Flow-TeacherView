@@ -100,7 +100,11 @@ class AddAssignment extends Component {
                     <div className="row g-3">
                         <div className="col-md-4">
                             <label className="form-label">Refactoring type</label>
-                            <input type="text" className="form-control" value={this.state.refactoringType} onChange={this.changeNameHandler} required/>
+                            <select value={this.state.refactoringType} onChange={this.changeNameHandler} required>
+                                <option value={"Rename_Method"}>Rename method</option>
+                                <option value={"API_Rename"}>API rename</option>
+                                <option value={"Extract_Method"}>Extract method</option>
+                            </select>
                         </div>
                         <div className="col-md-4">
                             <label className="form-label">Language</label>
