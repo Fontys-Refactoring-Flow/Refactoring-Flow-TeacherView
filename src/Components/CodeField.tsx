@@ -2,7 +2,7 @@ import React, {FormEvent, useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../style/Codeview.css'
 import '../style/Main.css'
-import codeService from '../services/codeService';
+import codeService from '../services/code.service';
 import { useParams } from 'react-router-dom'
 import {useAuth} from "./context/AuthContext";
 
@@ -17,7 +17,6 @@ type CodeFieldProps = {
 }
 
 const CodeField = (props: CodeFieldProps) => {
-    const auth = useAuth()
     const {assignmentId, userName} = useParams();
     const [code, setCode] = useState("");
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
