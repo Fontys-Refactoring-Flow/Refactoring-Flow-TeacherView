@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import './../style/Main.css'
-import './../style/Card.css'
+import '../style/Main.css'
+import '../style/Card.css'
 import {Link, useSearchParams} from 'react-router-dom'
 import studentService from "../services/student.service";
 import assignmentService from "../services/assignment.service";
