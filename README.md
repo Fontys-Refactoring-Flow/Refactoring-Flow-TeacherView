@@ -6,7 +6,7 @@
 
 <br />
 <div align="center">
-  <h3 align="center">Refactoring Flow Frontend</h3>
+  <h3 align="center">Refactoring Flow TeacherView</h3>
 
   <p align="center">
     The official frontend repository for the Refactoring Flow project.
@@ -76,7 +76,7 @@ _Below is an instruction on how to install the project for it's first time run._
 
 1. Fork / clone the repo
    ```sh
-   git clone https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend.git
+   git clone https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView.git
    ```
 2. Install dependencies
    ```sh
@@ -140,13 +140,13 @@ Project Link: [https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Teach
 [contributors-shield]: https://img.shields.io/github/contributors/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView.svg?style=for-the-badge
 [contributors-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView.svg?style=for-the-badge
-[forks-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/network/members
+[forks-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView/network/members
 [stars-shield]: https://img.shields.io/github/stars/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView?style=for-the-badge
-[stars-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/stargazers
+[stars-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView?style=for-the-badge
-[issues-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues
+[issues-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView/issues
 [license-shield]: https://img.shields.io/github/license/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView?style=for-the-badge
-[license-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/blob/master/LICENSE.MD
+[license-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-TeacherView/blob/master/LICENSE.MD
 [product-screenshot]: images/screenshot.png
 [Spring]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
 [Spring-url]: https://spring.io/
