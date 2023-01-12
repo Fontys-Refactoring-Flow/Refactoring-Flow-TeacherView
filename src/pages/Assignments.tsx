@@ -21,27 +21,27 @@ const AssignmentsPage = () => {
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                 <button className="button" type="submit">Search</button>
             </form>
-            <p className='title' style={{textAlign:'left'}}>All Assignments</p>
-            <table className='card-container'>
-                <tbody>
+            <p className='title'>All Assignments</p>
+            <div className='card-container'>
                 {
-                    assignments?.map((challenge) =>
-                        <tr key={challenge.id}>
-                            <td>
-                                <div className='card' style={{ width: '18rem', height: '200px', margin: '10px' }}>
-                                    <div className="card-body">
-                                        <h5 className="card-title">{challenge.refactoringType}</h5>
-                                        <p className='card-body'>{"Level 1"}</p>
-                                        <Link to='editassignment' className='button' role="button">Edit Assignment</Link>
+                    assignments?.map((assignment) =>
+                            <div key={assignment.id}>
+                                <div className='cards'>
+                                    <div className='card' style={{ width: '18rem', height: '200px', margin: '10px', textAlign:'center' }}>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{assignment.refactoringType}</h5>
+                                            <p className="card-text">{"Refactoring level: "}{assignment.level}</p>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
                     )
                 }
-                </tbody>
-            </table>
+            </div>
         </div>
+
+
     )
 }
 

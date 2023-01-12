@@ -1,6 +1,6 @@
 import React, {FormEvent, useEffect, useState} from 'react'
-import './../style/Main.css'
-import './../style/Card.css'
+import '../style/Main.css'
+import '../style/Card.css'
 import {useNavigate} from 'react-router-dom'
 import {StudentType} from "../types/UserTypes";
 import studentService from "../services/student.service";
